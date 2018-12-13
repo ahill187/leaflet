@@ -1892,6 +1892,7 @@ methods.clearControls = function () {
   this.controls.clear();
 };
 
+var initLayer = true;
 methods.addLegend = function (options) {
   var _this5 = this;
 
@@ -2004,11 +2005,13 @@ methods.addLegend = function (options) {
       map.on("overlayadd", function (e) {
         if (e.name === options.group) {
           map.controls.add(legend, options.layerId);
+
         }
       });
       map.on("overlayremove", function (e) {
         if (e.name === options.group) {
           map.controls.remove(options.layerId);
+
         }
       });
       map.on("groupadd", function (e) {
@@ -2021,11 +2024,21 @@ methods.addLegend = function (options) {
           map.controls.remove(options.layerId);
         }
       });
+      map.on("baselayerchange", function(e){
+        if(e.name === options.group){
+          map.controls.add(legend, options.layerId);
+        } else {
+          map.controls.remove(options.layerId);
+        }
+      })
     })();
   }
-
-  this.controls.add(legend, options.layerId);
+  if(options.initLayer === true){
+    this.controls.add(legend, options.layerId);
+  }
+  //this.controls.add(legend, options.layerId);
 };
+
 
 methods.addLayersControl = function (baseGroups, overlayGroups, options) {
   var _this6 = this;

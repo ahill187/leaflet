@@ -62,9 +62,9 @@ addLegend <- function(
   map, position = c("topright", "bottomright", "bottomleft", "topleft"),
   pal, values, na.label = "NA", bins = 7, colors, opacity = 0.5, labels = NULL,
   labFormat = labelFormat(), title = NULL, className = "info legend",
-  layerId = NULL, group = NULL, data = getMapData(map)
+  layerId = NULL, group = NULL, data = getMapData(map), initLayer = TRUE
 ) {
-  print("This is a test")
+  print("Leaflet legend")
   position <- match.arg(position)
   type <- "unknown"; na.color <- NULL
   extra <- NULL  # only used for numeric palettes to store extra info
@@ -155,7 +155,7 @@ addLegend <- function(
     colors = I(unname(colors)), labels = I(unname(labels)),
     na_color = na.color, na_label = na.label, opacity = opacity,
     position = position, type = type, title = title, extra = extra,
-    layerId = layerId, className = className, group = group
+    layerId = layerId, className = className, group = group, initLayer = initLayer
   )
   invokeMethod(map, data, "addLegend", legend)
 }

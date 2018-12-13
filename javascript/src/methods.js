@@ -703,8 +703,8 @@ methods.getControl = function(layerId) {
 methods.clearControls = function() {
   this.controls.clear();
 };
-/*
-methods.addLegend = function(options) {
+
+methods.addLegend2 = function(options) {
   let legend = L.control({position: options.position});
   let gradSpan;
 
@@ -854,7 +854,7 @@ methods.addLegend = function(options) {
 
   this.controls.add(legend, options.layerId);
 };
-*/
+
 
 methods.addLayersControl = function(baseGroups, overlayGroups, options) {
 
