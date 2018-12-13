@@ -64,6 +64,7 @@ addLegend <- function(
   labFormat = labelFormat(), title = NULL, className = "info legend",
   layerId = NULL, group = NULL, data = getMapData(map)
 ) {
+  print("This is a test")
   position <- match.arg(position)
   type <- "unknown"; na.color <- NULL
   extra <- NULL  # only used for numeric palettes to store extra info

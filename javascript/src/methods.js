@@ -703,7 +703,7 @@ methods.getControl = function(layerId) {
 methods.clearControls = function() {
   this.controls.clear();
 };
-
+/*
 methods.addLegend = function(options) {
   let legend = L.control({position: options.position});
   let gradSpan;
@@ -830,6 +830,8 @@ methods.addLegend = function(options) {
     map.on("overlayadd", function(e){
       if(e.name === options.group) {
         map.controls.add(legend, options.layerId);
+      }  else {
+
       }
     });
     map.on("overlayremove", function(e){
@@ -847,10 +849,12 @@ methods.addLegend = function(options) {
         map.controls.remove(options.layerId);
       }
     });
+
   }
 
   this.controls.add(legend, options.layerId);
 };
+*/
 
 methods.addLayersControl = function(baseGroups, overlayGroups, options) {
 

@@ -5073,6 +5073,7 @@ var Layers = Control.extend({
 
 		var obj = this._getLayer(stamp(e.target));
 
+
 		// @namespace Map
 		// @section Layer events
 		// @event baselayerchange: LayersControlEvent
